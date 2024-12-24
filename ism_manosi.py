@@ -7,7 +7,7 @@ def ism_manosi_funksiyasi(ism):
     url = f"https://ismlar.com/uz/name/{ism}"
     response = requests.get(url=url)
 
-    soup = BeautifulSoup(response.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib 
+    soup = BeautifulSoup(response.content, 'html5lib') 
     natija = soup.find("div", attrs={"class":"space-y-4"})
     try:
         natija = transliter(natija.p.text.strip())
@@ -15,4 +15,3 @@ def ism_manosi_funksiyasi(ism):
         natija = False
     return natija
 
-print(ism_manosi_funksiyasi("Ulug‘bek"))

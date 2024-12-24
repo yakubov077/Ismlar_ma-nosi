@@ -1,10 +1,10 @@
-# from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Namuna inline
-# menu = InlineKeyboardMarkup(
-#     inline_keyboard=[
-#         [
-#             InlineKeyboardButton(text="", callback_data=""), 
-#         ]
-#     ]
-# )
+menu1 = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text="🔙 ORQAGA QAYTISH", callback_data="orqaga_qaytish"),
+        ]
+    ]
+)

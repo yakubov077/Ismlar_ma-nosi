@@ -7,7 +7,6 @@ import sys
 import handlers
 from menucommands.set_bot_commands  import set_default_commands
 
-#bot ishga tushganini xabarini yuborish
 @dp.startup()
 async def on_startup_notify(bot: Bot):
     for admin in ADMINS:
@@ -16,7 +15,6 @@ async def on_startup_notify(bot: Bot):
         except Exception as err:
             logging.exception(err)
 
-#bot ishdan to'xtadi xabarini yuborish
 @dp.shutdown()
 async def off_startup_notify(bot: Bot):
     for admin in ADMINS:
@@ -30,7 +28,6 @@ def setup_middlewares(dispatcher: Dispatcher, bot: Bot) -> None:
     """MIDDLEWARE"""
     from middlewares.throttling import ThrottlingMiddleware
 
-    # Spamdan himoya qilish uchun klassik ichki o'rta dastur. So'rovlar orasidagi asosiy vaqtlar 0,5 soniya
     dispatcher.message.middleware(ThrottlingMiddleware(slow_mode_delay=0.5))
 
 
